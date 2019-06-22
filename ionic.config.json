@@ -1,6 +1,8 @@
 {
   "name": "mybdi",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "98894f36"
 }

@@ -1,0 +1,23 @@
+ion-content {
+    --ion-background-color: rgb(44, 145, 240);
+  }
+
+  ion-img {
+    position: relative;
+    display: block;
+    margin-right: auto;
+    width:60%;
+    height: auto;
+  }
+
+  h1, h2, h3 {
+    color: #ffffff;
+  }
+
+  .btn-save {
+    float: right;
+  }
+
+  ion-select{
+    max-width: 100% !important;
+    }

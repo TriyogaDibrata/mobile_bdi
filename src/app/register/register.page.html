@@ -1,0 +1,60 @@
+<ion-content padding>
+  <ion-fab vertical="top" horizontal="start" slot="fixed">
+    <ion-fab-button size="small" color="dark" [routerLink]="['/home']">
+      <ion-icon name="arrow-round-back"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <h1 class="ion-text-center ion-margin-top">DAFTAR</h1>
+  <ion-item no-padding>
+    <ion-label position="stacked" color="light">Nama</ion-label>
+    <ion-input type="text" [(ngModel)]="pasien.nama"></ion-input>
+  </ion-item>
+  
+  <ion-row no-padding>
+    <ion-col size="8">
+      <ion-item no-padding>
+        <ion-label position="stacked" color="light">Jenis Kelamin</ion-label>
+        <ion-select placeholder="Select One" [(ngModel)]="pasien.jenis_kelamin">
+          <ion-select-option *ngFor="let jk of jenis_kelamin" value="{{ jk.id }}" color="light">{{ jk.jenis_kelamain }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+    <ion-col size="4">
+      <ion-item no-padding>
+        <ion-label position="stacked" color="light">Umur</ion-label>
+        <ion-input type="number" [(ngModel)]="pasien.umur"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-item no-padding>
+    <ion-label position="stacked" color="light">Pekerjaan</ion-label>
+    <ion-select placeholder="Select One" [(ngModel)]="pasien.pekerjaan">
+      <ion-select-option *ngFor="let pekerjaan of pekerjaan" value="{{ pekerjaan.id }}">{{  pekerjaan.pekerjaan}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item no-padding>
+    <ion-label position="stacked" color="light">Pendidikan</ion-label>
+    <ion-select placeholder="Select One" [(ngModel)]="pasien.pendidikan">
+        <ion-select-option text-wrap *ngFor="let pendidikan of pendidikan" value="{{ pendidikan.id }}">{{  pendidikan.pendidikan }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item no-padding>
+    <ion-label position="stacked" color="light">Agama</ion-label>
+    <ion-select placeholder="Select One" [(ngModel)]="pasien.agama">
+        <ion-select-option *ngFor="let agama of agama" value="{{ agama.id }}">{{  agama.agama }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  
+  <ion-item no-padding>
+    <ion-label position="stacked" color="light">Status Perkawinan</ion-label>
+    <ion-select placeholder="Select One" [(ngModel)]="pasien.statuspk">
+        <ion-select-option *ngFor="let status_kawin of status_kawin" value="{{ status_kawin.id }}">{{  status_kawin.status_perkawinan}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button class="btn-save" color="secondary" shape="round" (click)="save()">Lanjut</ion-button>
+
+  <ion-img src="assets/images/daftar.png"></ion-img>
+</ion-content>

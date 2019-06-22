@@ -12,9 +12,14 @@ const routes: Routes = [
     loadChildren: './home/home.module#HomePageModule'
   },
   {
-    path: 'list',
+    path: 'list/:id',
     loadChildren: './list/list.module#ListPageModule'
-  }
+  },
+  { path: 'register', 
+    loadChildren: './register/register.module#RegisterPageModule' 
+  },
+  { path: 'hasil/:id', 
+    loadChildren: './hasil/hasil.module#HasilPageModule' }
 ];
 
 @NgModule({

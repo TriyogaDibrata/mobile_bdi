@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Diagnosa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-text>Pasien atas nama <b>{{ data.nama }}</b> didiagnosa mengalami <b>{{ data.diagnosa }}</b>. </ion-text>
+  <br>
+  <ion-text>Solusi yang disarankan adalah <b>{{ data.solusi }}</b></ion-text>
+  <br>
+  <ion-button color="primary" class="btn-back" [routerLink]="['/home']">Kembali Ke Menu Utama</ion-button>
+</ion-content>

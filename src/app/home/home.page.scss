@@ -2,3 +2,32 @@
   max-height: 35vh;
   overflow: hidden;
 }
+
+ion-content {
+  --ion-background-color: rgb(44, 145, 240);
+  height: 100vh;
+
+  ion-img {
+    position: relative;
+    display: block;
+    width: 70%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+ion-title {
+  font-size: 18pt;
+}
+
+h1,h2,h3 {
+  color: #ffffff;
+}
+
+.center-button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
