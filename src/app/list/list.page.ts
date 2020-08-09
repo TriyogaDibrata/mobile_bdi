@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, of, throwError } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NavController, AlertController, ToastController } from '@ionic/angular';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-list',
@@ -20,6 +21,9 @@ export class ListPage implements OnInit {
   option : any = [];
   total : any;
   user_id : any;
+  disabled_btn : boolean = true;
+
+  url : any = `${environment.api_url}`;
 
   public items: Array<{ title: string; note: string; icon: string }> = [];
   constructor(private http : HttpClient,
@@ -30,15 +34,27 @@ export class ListPage implements OnInit {
 
   }
 
-  ngOnInit() {
+  ngOnInit(){
+
+  }
+
+  ionViewWillEnter() {
 
     this.user_id = this.route.snapshot.paramMap.get('id');
 
-    this.http.get('http://localhost:8000/api/gejala').subscribe((response) => {
+    this.http.get(this.url + 'gejala').subscribe((response) => {
         // console.log(data.data);
         this.gejala = response['data'];
         console.log(this.gejala.length);
     });
+  }
+
+  onInput(ev){
+    if(this.options.length >= (this.gejala.length + 1)){
+      return this.disabled_btn = false;
+    }
+
+    return this.disabled_btn = true;
   }
 
   select(no, answer){
@@ -61,6 +77,8 @@ export class ListPage implements OnInit {
       sum += Number(opt);
       this.total = sum;
     }
+
+    console.log(this.total);
     let headers = new HttpHeaders({
       'Accept': 'application/json',
       'Content-Type': 'applicatiobn/json'
@@ -71,7 +89,7 @@ export class ListPage implements OnInit {
       'hasil': this.total,
     };
 
-    this.http.post('http://localhost:8000/api/pasien/hasil/add', data, { headers: headers })
+    this.http.post(this.url + 'pasien/hasil/add', data, { headers: headers })
       .subscribe(data => {
         if (data['success']) {
           this.presentToast('Data Berhasil Disimpan');

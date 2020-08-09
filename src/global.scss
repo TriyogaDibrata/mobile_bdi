@@ -9,3 +9,94 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+
+
+.alert-wrapper.sc-ion-alert-md {
+    min-width: 320px !important;
+}
+
+.alert-radio-label.sc-ion-alert-md {
+    white-space: normal;
+}
+
+
+/* === Color Themes === */
+.text-muted {
+    color: #6d6d72 !important;
+}
+
+.color-gray {
+    color: #8e8e93 !important;
+}
+
+.color-red {
+    color: #ff3b30 !important;
+}
+
+.bg-color-red {
+    background-color: #ff3b30 !important;
+}
+
+.color-white {
+    color: #ffffff !important;
+}
+
+.color-yellow {
+    color: #ffcc00 !important;
+}
+
+.bg-color-yellow {
+    background-color: #ffcc00 !important;
+}
+
+.color-green {
+    color: #4cd964 !important;
+}
+
+.color-orange {
+    color: #ff9500 !important;
+}
+
+.bg-color-orange {
+    background-color: #ff9500 !important;
+}
+
+.color-blue {
+    color: #007aff !important;
+}
+
+.bg-color-blue {
+    background-color: #007aff !important;
+}
+
+.color-lightblue {
+    color: #5ac8fa !important;
+}
+
+.bg-color-lightblue {
+    background-color: #5ac8fa !important;
+}
+
+.color-bluegray {
+    color: #607d8b !important;
+}
+
+.bg-color-bluegray {
+    background-color: #607d8b !important;
+}
+
+.color-night {
+    color: #2B1B17 !important;
+}
+
+.color-black {
+    color: black !important;
+}
+
+.bg-color-white {
+    background-color: #ffffff;
+}
+
+.bg-color-green {
+    background-color: #4cd964 !important;
+}

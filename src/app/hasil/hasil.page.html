@@ -1,5 +1,42 @@
-<ion-header>
-  <ion-toolbar color="primary">
+<ion-content class="ion-no-padding">
+  <div class="header">
+    Hasil Diagnosa
+  </div>
+  <div class="result-wrapper">
+
+    <div class="result-img">
+      <img src="assets/images/hasil.png" />
+    </div>
+
+    <ion-text>
+      Berikut merupakan hasil diagnosa dari pasien atas nama <br/>
+      <b>{{ data.nama }}</b>
+    </ion-text>
+
+    <ion-card class="diagnosa" mode="ios">
+      <ion-text>Diagnosa :</ion-text>
+      <div class="hasil">{{ data.diagnosa }}</div>
+    </ion-card>
+
+    <ion-card class="solusi" mode="ios">
+      <ion-text>Solusi yang disarankan :</ion-text>
+      <div class="hasil">
+        {{ data.solusi }}
+      </div>
+    </ion-card>
+  </div>
+
+  <div class="footer">
+    <ion-button expand="block" shape="round" color="danger" mode="ios" [routerLink]="['/home']">Kembali ke halaman utama</ion-button>
+  </div>
+</ion-content>
+<!-- <ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" shape="round" mode="ios" color="danger">Kembali ke halaman utama</ion-button>
+  </ion-toolbar>
+</ion-footer> -->
+<!-- <ion-header>
+  <ion-toolbar>
     <ion-title>Diagnosa</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -10,4 +47,4 @@
   <ion-text>Solusi yang disarankan adalah <b>{{ data.solusi }}</b></ion-text>
   <br>
   <ion-button color="primary" class="btn-back" [routerLink]="['/home']">Kembali Ke Menu Utama</ion-button>
-</ion-content>
+</ion-content> -->

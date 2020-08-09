@@ -1,27 +1,39 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-      Gejala
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      Kuisioner Kesehatan
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list *ngFor="let item of gejala">
-    <ion-radio-group [(ngModel)]="options[item.id]"> 
-      <ion-list-header>
-        <ion-label>{{item.no_gejala}}</ion-label>
-      </ion-list-header>
-  
-      <ion-item *ngFor="let a of item.keluhan">
-        <ion-label text-wrap>{{a.gejala}}</ion-label>
-        <ion-radio slot="start" value="{{a.nilai}}"></ion-radio>
-      </ion-item>
-    </ion-radio-group>
-  </ion-list>
-  <ion-button expand="block" (click)="geta()" style="margin: 20px;">Tampilkan Hasil</ion-button>
-  <!-- <p>Hasil : {{total}}</p> -->
+  <div class="tl-wrapper">
+    <ion-list>
+      <ul class="timeline">
+        <li *ngFor="let item of gejala; let i = index;">
+          <div class="timeline-thumb bg-color-blue timeline-icon">
+            <!-- <ion-icon name="heart"></ion-icon> -->
+            <h3>{{ i + 1 }}</h3>
+          </div>
+          <div class="timeline-item">
+            <h4>{{ item.no_gejala }}</h4>
+
+            <ion-radio-group [(ngModel)]="options[item.id]" (ionChange)="onInput($event)"> 
+          
+              <ion-item *ngFor="let a of item.keluhan" lines="none">
+                <ion-label text-wrap>{{a.gejala}}</ion-label>
+                <ion-radio slot="start" value="{{a.nilai}}"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </div>
+        </li>
+      </ul>
+    </ion-list>
+  </div>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button shape="round" expand="block" color="secondary" mode="ios" (click)="geta()" [disabled]="disabled_btn">Lihat Hasil Diagnosa</ion-button>
+  </ion-toolbar>
+</ion-footer>

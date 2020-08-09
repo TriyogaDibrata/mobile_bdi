@@ -1,9 +1,33 @@
-<ion-content>
-  <h2 class="ion-margin-top ion-text-center">
-    Sistem Pakar Diagnosa Gangguan Depresi Metode
-    <br>
-    Beck Depression Iventory
-  </h2>
-  <ion-button class="center-button ion-margin-top" color="secondary" [routerLink]="['/register']">Masuk</ion-button>
-  <ion-img src="assets/images/logo.png"></ion-img>
+<ion-content class="ion-no-padding">
+  <div class="logo-wrapper">
+
+    <div class="logo">
+      <img src="assets/images/logo.png" />
+    </div>
+
+    <div class="title">
+      Layanan Skrining Depresi Online
+    </div>
+      
+  </div>
+  <div class="improvement">
+    <ion-button mode="ios" expand="block" shape="round" color="light" [routerLink]="['/register']">
+      Masuk
+    </ion-button>
+  </div>
+
+  <div class="footer">
+    <div class="logo">
+      <img src="assets/images/logo-stikom.png" />
+    </div>
+    Powered by <strong>ITB Stikom Bali</strong>
+    <br/> 
+    <span>@2020</span>
+  </div>
 </ion-content>
+<!-- <ion-footer>
+  <ion-toolbar color="light" class="ion-activatable" [routerLink]="['/register']">
+    <ion-ripple-effect></ion-ripple-effect>
+    <ion-title class="ion-text-center">Masuk</ion-title>
+  </ion-toolbar>
+</ion-footer> -->

@@ -1,3 +1,73 @@
-.btn-back {
-    float: right;
+ion-header::after {
+    background-image: none;
+}
+
+ion-toolbar {
+    --background: #6dd5ed;
+}
+
+ion-content {
+    --background : #6dd5ed;
+}
+
+.header {
+    color: var(--ion-color-light);
+    font-size: 32px;
+    text-align: center;
+    margin-top: 5vh;
+    font-weight: 700;
+    font-family: monospace;
+}
+
+.result-wrapper {
+    text-align: center;
+    color: var(--ion-color-light);
+    padding: 16px;
+
+    b {
+        font-size: 20px;
+        font-weight: 600;
+    }
+}
+
+.result-wrapper .diagnosa {
+    height: 60px;
+    background: var(--ion-color-warning);
+    border-radius: 12px;
+    padding: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 20px;
+    color: var(--ion-color-light);
+}
+
+.diagnosa .hasil {
+    font-size: 24px;
+}
+
+.result-wrapper .solusi {
+    background: var(--ion-color-success-tint);
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 16px;
+    margin-top: 20px;
+    color: var(--ion-color-light);
+    z-index: 1000;
+}
+
+.solusi .hasil {
+    font-weight: 700;
+    margin-top: 7px;
+}
+.result-img img {
+    max-height: 200px;
+    display: block;
+    margin: auto;
+}
+
+.footer {
+    padding: 16px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
